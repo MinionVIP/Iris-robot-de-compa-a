@@ -1,10 +1,5 @@
-# IRIS 👁️ Mirada expresiva, compañía inteligente
+# IRIS | Mirada expresiva, compañía inteligente
 
-<p align="center">
-  <img src="imagenes/iris_ilustracion.png" alt="Ilustración de IRIS" height="320">
-  &nbsp;&nbsp;&nbsp;
-  <img src="imagenes/robot.jpg" alt="IRIS, el robot real" height="320">
-</p>
 
 **IRIS** es un robot de escritorio con ojos animados y movimiento sincronizado. Dos pantallas OLED hacen de ojos: parpadean, miran hacia los lados, se ponen felices, se sorprenden y hasta se quedan dormidos, mientras un servomotor gira su cabeza en la misma dirección en la que mira.
 
@@ -31,7 +26,7 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 
 ---
 
-## ✨ ¿Qué hace IRIS?
+## ¿Qué hace IRIS?
 
 | Función | Qué ocurre |
 |---|---|
@@ -41,11 +36,11 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 | **Comportamiento autónomo** | Descansa entre 1,5 y 3,5 segundos, elige una acción al azar y nunca repite la misma dos veces seguidas. |
 | **Autonomía** | Funciona con una pila de 9V conectada al Arduino. |
 
-> 💡 **Sobre los grados:** el servo SG90 puede llegar hasta unos 180°. En este programa se usa entre 60° y 120° porque se ve más natural, pero puedes cambiarlo en las constantes `IZQUIERDA` y `DERECHA` (ver [Personalízalo](#-personalízalo)).
+>  **Sobre los grados:** el servo SG90 puede llegar hasta unos 180°. En este programa se usa entre 60° y 120° porque se ve más natural, pero puedes cambiarlo en las constantes `IZQUIERDA` y `DERECHA` (ver [Personalízalo](#-personalízalo)).
 
 ---
 
-## 🧰 Materiales
+##  Materiales
 
 | Cantidad | Material | Para qué sirve |
 |:---:|---|---|
@@ -88,7 +83,7 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 
 ```mermaid
 flowchart LR
-    PILA["🔋 Pila 9V"] -- "+ → VIN / − → GND" --> UNO["Arduino UNO"]
+    PILA[" Pila 9V"] -- "+ → VIN / − → GND" --> UNO["Arduino UNO"]
     UNO -- "3.3V · GND · SDA(A4) · SCL(A5)" --> OLEDI["OLED izquierda (0x3C)"]
     UNO -- "3.3V · GND · SDA(A4) · SCL(A5)" --> OLEDD["OLED derecha (0x3C)"]
     UNO -- "5V · GND · señal pin 9" --> SERVO["Servo SG90"]
@@ -100,15 +95,10 @@ flowchart LR
 - **La pila entra por `VIN`.** El Arduino la regula y reparte: de ahí salen los 5V del servo y los 3.3V de las pantallas.
 - **Todos los negativos van a la misma tierra (`GND`).** Si falta alguno, el circuito se comporta de forma rara.
 
-<p align="center">
-  <img src="imagenes/arduino_cerca.jpg" alt="Arduino UNO con los cables conectados" height="300">
-  &nbsp;
-  <img src="imagenes/arduino_arriba.jpg" alt="Vista desde arriba del Arduino UNO" height="300">
-</p>
 
 ---
 
-## 🛠️ Armado paso a paso
+##  Armado paso a paso
 
 ### Paso 1 · Reúne los materiales y prueba cada pieza
 Antes de unir nada, revisa que cada componente funcione por separado. Las pantallas OLED tienen solo cuatro pines (`GND`, `VCC`, `SCL`, `SDA`), así que las dos se conectan a los mismos pines del Arduino.
@@ -143,15 +133,9 @@ Con el movimiento del servo, algunas conexiones se sueltan. Alarga con cables de
 ### Paso 8 · Montaje final
 Pon el Arduino (sobre su base acrílica) dentro del cuerpo, con la pila de 9V justo debajo, conectada a `VIN` y `GND`. Cierra, conecta la pila y ¡IRIS cobra vida!
 
-<p align="center">
-  <img src="imagenes/interior.jpg" alt="Interior del robot" height="300">
-  &nbsp;
-  <img src="imagenes/cableado.jpg" alt="Cableado de pantallas y servo" height="300">
-</p>
-
 ---
 
-## ⬆️ Cómo cargar el código
+##  Cómo cargar el código
 
 1. Descarga o clona este repositorio:
    ```bash
@@ -166,7 +150,7 @@ Pon el Arduino (sobre su base acrílica) dentro del cuerpo, con la pila de 9V ju
 
 ---
 
-## 🧠 Cómo funciona el código
+##  Cómo funciona el código
 
 Todo el programa está en un solo archivo: [`iris/iris.ino`](iris/iris.ino). Los ojos **no son imágenes**: se dibujan con formas geométricas (rectángulos redondeados y círculos), lo que permite animarlos con mucha suavidad.
 
@@ -218,7 +202,7 @@ Además, el programa **evita repetir la misma acción dos veces seguidas**, así
 
 ---
 
-## 🎛️ Personalízalo
+##  Personalízalo
 
 - **Que mire más lejos:** sube `IZQUIERDA` y baja `DERECHA` en el código, por ejemplo `30` y `150`. Si cambias esos valores, `desplazamientoMirada()` se ajusta solo.
 - **Movimientos más lentos o más rápidos:** cambia `PASO_SERVO_MS`.
@@ -228,7 +212,7 @@ Además, el programa **evita repetir la misma acción dos veces seguidas**, así
 
 ---
 
-## 🩺 Problemas frecuentes
+##  Problemas frecuentes
 
 | Problema | Qué revisar |
 |---|---|
@@ -260,28 +244,4 @@ Otro cambio: la carcasa estaba pensada para imprimirse en 3D, pero la impresora 
 3. **Alertas sonoras:** avisos al cambiar de ciclo.
 4. **Recordatorios con IA:** mensajes inteligentes directos desde IRIS.
 
----
 
-## 📂 Documentación del proyecto
-
-```
-IRIS/
-├── README.md                ← este archivo
-├── iris/
-│   └── iris.ino             ← código del robot (Arduino IDE)
-├── imagenes/                ← fotos e ilustración
-└── docs/
-    ├── IRIS_Informe.docx    ← informe completo del proyecto
-    ├── IRIS_Afiche.pdf      ← afiche para la feria
-    └── IRIS_Triptico.pdf    ← tríptico
-```
-
----
-
-## 👥 Equipo
-
-**Docente:** Gustavo Honorato
-
-**Integrantes:** Ana Belén Campos · María Soledad Martínez · Juan Pablo Cantillano · Diego Garay · John Rivera
-
-*Proyecto Internet de las Cosas · Santo Tomás · GitHub: [MinionVIP](https://github.com/MinionVIP)*
