@@ -1,4 +1,4 @@
-# IRIS 👁️ Mirada expresiva, compañía inteligente
+# IRIS | Mirada expresiva, compañía inteligente
 
 <p align="center">
   <img src="imagenes/iris_ilustracion.png" alt="Ilustración de IRIS" height="320">
@@ -14,7 +14,7 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 
 ---
 
-## 📑 Contenido
+##  Contenido
 
 1. [¿Qué hace IRIS?](#-qué-hace-iris)
 2. [Materiales](#-materiales)
@@ -31,7 +31,7 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 
 ---
 
-## ✨ ¿Qué hace IRIS?
+##  ¿Qué hace IRIS?
 
 | Función | Qué ocurre |
 |---|---|
@@ -45,7 +45,7 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 
 ---
 
-## 🧰 Materiales
+##  Materiales
 
 | Cantidad | Material | Para qué sirve |
 |:---:|---|---|
@@ -64,7 +64,7 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 
 ---
 
-## 🔌 Conexiones
+##  Conexiones
 
 ### Tabla de conexiones
 
@@ -88,7 +88,7 @@ Todo funciona con **un Arduino UNO y una pila de 9V**, sin cables a la pared ni 
 
 ```mermaid
 flowchart LR
-    PILA["🔋 Pila 9V"] -- "+ → VIN / − → GND" --> UNO["Arduino UNO"]
+    PILA[" Pila 9V"] -- "+ → VIN / − → GND" --> UNO["Arduino UNO"]
     UNO -- "3.3V · GND · SDA(A4) · SCL(A5)" --> OLEDI["OLED izquierda (0x3C)"]
     UNO -- "3.3V · GND · SDA(A4) · SCL(A5)" --> OLEDD["OLED derecha (0x3C)"]
     UNO -- "5V · GND · señal pin 9" --> SERVO["Servo SG90"]
@@ -108,7 +108,7 @@ flowchart LR
 
 ---
 
-## 🛠️ Armado paso a paso
+##  Armado paso a paso
 
 ### Paso 1 · Reúne los materiales y prueba cada pieza
 Antes de unir nada, revisa que cada componente funcione por separado. Las pantallas OLED tienen solo cuatro pines (`GND`, `VCC`, `SCL`, `SDA`), así que las dos se conectan a los mismos pines del Arduino.
@@ -151,7 +151,7 @@ Pon el Arduino (sobre su base acrílica) dentro del cuerpo, con la pila de 9V ju
 
 ---
 
-## ⬆️ Cómo cargar el código
+##  Cómo cargar el código
 
 1. Descarga o clona este repositorio:
    ```bash
@@ -166,7 +166,7 @@ Pon el Arduino (sobre su base acrílica) dentro del cuerpo, con la pila de 9V ju
 
 ---
 
-## 🧠 Cómo funciona el código
+##  Cómo funciona el código
 
 Todo el programa está en un solo archivo: [`iris/iris.ino`](iris/iris.ino). Los ojos **no son imágenes**: se dibujan con formas geométricas (rectángulos redondeados y círculos), lo que permite animarlos con mucha suavidad.
 
@@ -218,7 +218,7 @@ Además, el programa **evita repetir la misma acción dos veces seguidas**, así
 
 ---
 
-## 🎛️ Personalízalo
+##  Personalízalo
 
 - **Que mire más lejos:** sube `IZQUIERDA` y baja `DERECHA` en el código, por ejemplo `30` y `150`. Si cambias esos valores, `desplazamientoMirada()` se ajusta solo.
 - **Movimientos más lentos o más rápidos:** cambia `PASO_SERVO_MS`.
@@ -228,7 +228,7 @@ Además, el programa **evita repetir la misma acción dos veces seguidas**, así
 
 ---
 
-## 🩺 Problemas frecuentes
+##  Problemas frecuentes
 
 | Problema | Qué revisar |
 |---|---|
@@ -241,7 +241,7 @@ Además, el programa **evita repetir la misma acción dos veces seguidas**, así
 
 ---
 
-## 📖 Historia del proyecto
+##  Historia del proyecto
 
 El proyecto tuvo tres nombres: empezó como **PomoBot** (un asistente de estudio con método Pomodoro), pasó por **CronoBot** y terminó como **IRIS**, ya no solo para estudiar, sino para lo que cada persona decida.
 
@@ -251,7 +251,7 @@ Otro cambio: la carcasa estaba pensada para imprimirse en 3D, pero la impresora 
 
 ---
 
-## 🚀 Próxima etapa
+##  Próxima etapa
 
 **Temporizador Pomodoro e IA**
 
@@ -260,28 +260,4 @@ Otro cambio: la carcasa estaba pensada para imprimirse en 3D, pero la impresora 
 3. **Alertas sonoras:** avisos al cambiar de ciclo.
 4. **Recordatorios con IA:** mensajes inteligentes directos desde IRIS.
 
----
 
-## 📂 Documentación del proyecto
-
-```
-IRIS/
-├── README.md                ← este archivo
-├── iris/
-│   └── iris.ino             ← código del robot (Arduino IDE)
-├── imagenes/                ← fotos e ilustración
-└── docs/
-    ├── IRIS_Informe.docx    ← informe completo del proyecto
-    ├── IRIS_Afiche.pdf      ← afiche para la feria
-    └── IRIS_Triptico.pdf    ← tríptico
-```
-
----
-
-## 👥 Equipo
-
-**Docente:** Gustavo Honorato
-
-**Integrantes:** Ana Belén Campos · María Soledad Martínez · Juan Pablo Cantillano · Diego Garay · John Rivera
-
-*Proyecto Internet de las Cosas · Santo Tomás · GitHub: [MinionVIP](https://github.com/MinionVIP)*
